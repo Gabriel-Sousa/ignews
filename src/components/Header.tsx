@@ -6,7 +6,7 @@ export function Header() {
     <header className='h-20 border-b border-gray-600'>
       <div className='max-w-6xl h-20 mx-auto px-8 flex items-center justify-between'>
         <div className='flex items-center'>
-          <Image src="/images/logo.svg" alt="ig.news" width={108} height={108}
+          <Image src="/images/logo.svg" alt="ig.news" width={108} height={108} className='w-auto h-auto'
           />
           <nav className='ml-20 h-20 flex gap-8 '>
             <a

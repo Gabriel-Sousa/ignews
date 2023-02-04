@@ -25,7 +25,7 @@ export default function Home({ product }: HomeProps) {
           <span className='mt-8 mb-10 text-2xl block'>Get access to all the publications<br /> <span className='text-cyan-400'> for {product.amount} month</span></span>
           <SubscribeButton priceID={product.priceID} />
         </section>
-        <Image src="/images/avatar.svg" alt="" width={334} height={520} className="mt-28" />
+        <Image src="/images/avatar.svg" alt="" width={334} height={520} priority className="mt-28 w-auto h-auto" />
 
       </main>
     </>
