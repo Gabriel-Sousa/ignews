@@ -15,6 +15,7 @@ type User = {
 }
 
 const subscribe = async (req: NextApiRequest, res: NextApiResponse) => {
+  console.log('a')
   if (req.method === 'POST') {
 
     const session = await getSession({ req })

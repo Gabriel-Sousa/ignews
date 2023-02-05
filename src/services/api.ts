@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const api = axios.create({
-  baseURL: "https://ignews-rose-nine.vercel.app/api"
+  baseURL: "/api"
 })
 
 
