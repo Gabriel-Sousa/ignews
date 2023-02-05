@@ -34,7 +34,6 @@ export const authOptions: NextAuthOptions = {
                   q.Match(
                     q.Index('user_by_email'),
                     q.Casefold(email),
-
                   )
                 )
               ),
