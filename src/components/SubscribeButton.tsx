@@ -22,9 +22,7 @@ export function SubscribeButton({ priceID }: SubscribeButtonProps) {
     // criação da checkout session
 
     try {
-      console.log('a')
       const response = await api.post('/subscribe')
-      console.log('b')
       const { sessionId } = response.data
 
       const stripe = await getStripeJs()
