@@ -10,7 +10,6 @@ export async function saveSubscription(
 
 
 
-  console.log('savesubscription')
   const userRef = await fauna.query(
     q.Select(
       "ref",
