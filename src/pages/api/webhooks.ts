@@ -30,7 +30,6 @@ const relevantEvents = new Set([
 ])
 
 const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log('webhopppppp')
 
   if (req.method === "POST") {
     const buf = await buffer(req)
@@ -55,7 +54,7 @@ const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
 
             const checkoutSession = event.data.object as Stripe.Checkout.Session
 
-
+            console.log(checkoutSession)
             await saveSubscription(
               checkoutSession.subscription?.toString()!,
               checkoutSession.customer?.toString()!,
