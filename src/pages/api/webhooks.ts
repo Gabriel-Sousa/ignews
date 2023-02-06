@@ -32,7 +32,6 @@ const relevantEvents = new Set([
 const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
 
   if (req.method === "POST") {
-    console.log(req)
     const buf = await buffer(req)
     const secret = req.headers['stripe-signature']!
 
@@ -44,13 +43,9 @@ const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
       return res.status(400).send(`Webhook error: ${err.message}`)
     }
 
-
     const { type } = event
-    console.log(event, '++++++++++++++++++++++++')
-    console.log(type)
 
     if (relevantEvents.has(type)) {
-      console.log(type)
 
       try {
         switch (type) {
