@@ -30,6 +30,7 @@ const relevantEvents = new Set([
 ])
 
 const webhooks = async (req: NextApiRequest, res: NextApiResponse) => {
+  console.log('webhopppppp')
 
   if (req.method === "POST") {
     const buf = await buffer(req)
