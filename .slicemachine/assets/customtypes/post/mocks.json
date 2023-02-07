@@ -1,0 +1,28 @@
+{
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "palace"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Bottle"
+        }
+      }
+    ]
+  },
+  "content": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Quis ullamco Lorem officia officia exercitation nulla sunt laborum fugiat ea laborum culpa. Amet minim occaecat amet sit est sunt excepteur commodo voluptate."
+        }
+      }
+    ]
+  }
+}
