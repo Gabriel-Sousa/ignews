@@ -1,8 +1,9 @@
-import { prismic } from "@/src/services/prismic";
 import { asHTML, asText } from "@prismicio/helpers";
 import { GetServerSideProps } from "next"
-import { getSession } from "next-auth/react";
 import Head from "next/head";
+import { getSession } from "next-auth/react";
+
+import { prismic } from "@/src/services/prismic";
 
 
 interface PostProps {

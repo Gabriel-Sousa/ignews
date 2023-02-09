@@ -1,12 +1,11 @@
+import { asText } from '@prismicio/helpers'
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-
-import { asText } from '@prismicio/helpers'
-
-import { prismic } from '../../../src/services/prismic'
 import { useSession } from 'next-auth/react'
 import { useEffect } from 'react'
+
+import { prismic } from '../../../src/services/prismic'
 
 
 
