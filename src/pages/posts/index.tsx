@@ -1,8 +1,12 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
+import Link from 'next/link'
+
 import { asText } from '@prismicio/helpers'
 
 import { prismic } from '../../../src/services/prismic'
+import { useSession } from 'next-auth/react'
+import { useEffect } from 'react'
 
 
 
@@ -18,6 +22,8 @@ interface PostsProps {
 }
 
 export default function Posts({ posts }: PostsProps) {
+  const { data: session } = useSession()
+
   return (
     <>
       <Head>
@@ -26,11 +32,11 @@ export default function Posts({ posts }: PostsProps) {
       <main className='max-w-6xl mx-auto px-8'>
         <div className='max-w-3xl mt-20 mx-auto mb-0'>
           {posts.map(post => (
-            <a href="" className='block group pb-8 border-b border-gray-700 mb-8 last:mb-0' key={post.slug}>
+            <Link href={session ? `/posts/${post.slug}` : `/posts/preview/${post.slug}`} className='block group pb-8 border-b border-gray-700 mb-8 last:mb-0' key={post.slug}>
               <time className='flex items-center text-gray-400'>{post.updatedAt}</time>
               <strong className='block text-2xl mt-4 group-hover:text-yellow-500 transition-all '>{post.title}</strong>
               <p className='text-gray-400 mt-2 leading-relaxed'>{post.excerpt}</p>
-            </a>
+            </Link>
           ))}
 
         </div>
@@ -66,7 +72,8 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       posts
-    }, // revalidate: 60 * 60 * 24 // 24 hours
+    },
+    // revalidate: 60 * 60 * 24 // 24 hours
   }
 }
 
