@@ -1,6 +1,6 @@
 import Link, { LinkProps } from 'next/link'
 import { useRouter } from 'next/router'
-import React, { PropsWithChildren, useEffect,useState } from 'react'
+import React, { PropsWithChildren, useEffect, useState } from 'react'
 
 type ActiveLinkProps = LinkProps & {
   className?: string
@@ -47,7 +47,6 @@ const ActiveLink = ({
     className,
     computedClassName,
   ])
-
   return (
     <Link className={computedClassName} {...props}>
       {children}

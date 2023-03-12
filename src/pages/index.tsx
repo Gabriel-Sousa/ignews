@@ -8,7 +8,7 @@ import { stripe } from '../services/stripe'
 interface HomeProps {
   product: {
     priceID: string
-    amount: number
+    amount: string
   }
 }
 
@@ -22,8 +22,8 @@ export default function Home({ product }: HomeProps) {
         <section className='max-w-lg max-md:text-center max-md:mt-4'>
           <span className='font-bold text-2xl'>👏 Hey, welcome!</span>
           <h1 className='mt-10 font-extrabold text-7xl'>News About the<span className='text-cyan-400'> React</span> world</h1>
-          <span className='mt-8 mb-10 text-2xl block'>Get access to all the publications<br /> <span className='text-cyan-400'> for {product.amount} month</span></span>
-          <SubscribeButton priceID={product.priceID} />
+          <span className='mt-8 mb-10 text-2xl block'>Get access to all the publications<br /> <span className='text-cyan-400'>for {product.amount} month</span></span>
+          <SubscribeButton />
         </section>
         <Image src="/images/avatar.svg" alt="" width={334} height={520} priority className="mt-28 w-auto h-auto max-md:mt-14" />
 

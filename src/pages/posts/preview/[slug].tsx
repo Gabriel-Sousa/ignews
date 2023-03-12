@@ -22,8 +22,6 @@ interface PostPreviewProps {
 export default function PostPreview({ post }: PostPreviewProps) {
   const { data: session } = useSession()
 
-  console.log(session)
-
   const router = useRouter()
 
   useEffect(() => {
@@ -74,7 +72,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const post = {
     slug,
     title: asText(response.data.title),
-    content: asHTML(response.data.content.splice(0, 3)),
+    content: asHTML(response.data.content?.splice(0, 3)),
     updatedAt: new Date(response.last_publication_date).toLocaleDateString('pt-BR', {
       day: '2-digit',
       month: 'long',

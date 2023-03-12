@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next"
 import Head from "next/head";
 import { getSession } from "next-auth/react";
 
-import { prismic } from "@/src/services/prismic";
+import { prismic } from "../../../src/services/prismic";
 
 
 interface PostProps {

@@ -3,13 +3,12 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useSession } from 'next-auth/react'
-import { useEffect } from 'react'
 
 import { prismic } from '../../../src/services/prismic'
 
 
 
-type Post = {
+export type Post = {
   slug: string,
   title: string,
   excerpt: string,
